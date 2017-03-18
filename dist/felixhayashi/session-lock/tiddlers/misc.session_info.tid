@@ -16,7 +16,7 @@ Wiki running in ''read-only'' mode. Changes are not stored!
 
 <div class="selock-topbar selock-write-mode">
 Wiki is currently edited by <b>{{$:/status/UserName}}</b>!
-<$button class="selock-logout-button">Sitzung beenden
+<$button class="selock-logout-button">Exit session
   <$action-sendmessage $message="selock:tm-end-session" />
 </$button>
 </div>

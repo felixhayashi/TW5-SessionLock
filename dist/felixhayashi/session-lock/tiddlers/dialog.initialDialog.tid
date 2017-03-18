@@ -24,7 +24,7 @@ subtitle: {{$:/core/images/info-button }} Session info
 Before you can use this wiki you need to state whether you want to use this wiki in read or write mode.
 
 |!<$radio field="mode" value="write"></$radio> |!Write mode |You gain exclusive write access until you logout.|
-|!<$radio field="mode" value="read"></$radio> |!Read mode|You will be able to open all wiki content but cannot change any content. In case you decide to edit the wiki after you opened it in read-only mode, you need to reload the wiki and select write-mode.|
+|!<$radio field="mode" value="read"></$radio> |!Read mode |You will be able to open all wiki content but cannot change any content. In case you decide to edit the wiki after you opened it in read-only mode, you need to reload the wiki and select write-mode.|
 
 <$reveal type="nomatch" text="read" default={{!!mode}} animate="yes">
 
