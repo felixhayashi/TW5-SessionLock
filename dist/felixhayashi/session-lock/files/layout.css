@@ -1,0 +1,29 @@
+.selock-logout-button {
+  display: inline-block;
+}
+
+.selock-topbar {
+  border: 1px solid lightgray;
+  padding: 3px;
+  background: #D1EED4;
+  /* width: 200px; */
+  text-shadow: initial;
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 14px;
+}
+
+.selock-topbar.selock-write-mode {
+   background: #EED5D1;
+}
+
+@media (max-width: __breakpoint__) {
+
+ .tc-sidebar-scrollable {
+   padding-top: 60px;
+ }
+
+}

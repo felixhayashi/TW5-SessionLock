@@ -1,0 +1,10 @@
+{
+  "tiddlers": [
+    {
+      "file": "layout.css", "fields": {
+        "title": "$:/plugins/selock/tools/layout.css",
+        "type": "text/vnd.tiddlywiki",
+        "tags": [ "$:/tags/Stylesheet" ]
+    }}
+  ]
+}

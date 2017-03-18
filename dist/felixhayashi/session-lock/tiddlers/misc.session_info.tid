@@ -1,0 +1,28 @@
+title: $:/selock/tools/sessionInfo
+tags: $:/tags/PageTemplate
+
+\define read-mode-active()
+
+<div class="selock-topbar">
+Wiki running in ''read-only'' mode. Changes are not stored!
+<$button class="selock-logout-button">Edit wiki
+  <$action-sendmessage $message="selock:tm-start-session" />
+</$button>
+</div>
+
+\end
+
+\define write-mode-active()
+
+<div class="selock-topbar selock-write-mode">
+Wiki is currently edited by <b>{{$:/status/UserName}}</b>!
+<$button class="selock-logout-button">Sitzung beenden
+  <$action-sendmessage $message="selock:tm-end-session" />
+</$button>
+</div>
+
+\end
+
+<$list filter="[field:title[$:/status/UserName]has[text]]" emptyMessage="<<read-mode-active>>">
+<<write-mode-active>>
+</$list>
