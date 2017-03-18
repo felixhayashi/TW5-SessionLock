@@ -1,0 +1,50 @@
+title: $:/plugins/felixhayashi/tiddlymap/dialog/initialDialog
+subtitle: {{$:/core/images/info-button }} Session info
+
+\define write-mode-active()
+<div style="border: 1px solid lightgray; padding: 5px; background: #EED5D1;">
+  The wiki is currently edited by <b>{{$:/status/UserName}}</b>.
+</div>
+\end
+
+\define read-mode-active()
+<div style="border: 1px solid lightgray; padding: 5px; background: #D1EED4;">
+  The wiki is currently not edited.
+</div>
+\end
+
+\define new-user-form()
+//A user with this name does not exist and will be created.//
+\end
+
+<$list filter="[field:title[$:/status/UserName]has[text]]" emptyMessage="<<read-mode-active>>">
+<<write-mode-active>>
+</$list>
+
+Before you can use this wiki you need to state whether you want to use this wiki in read or write mode.
+
+|!<$radio field="mode" value="write"></$radio> |!Write mode |You gain exclusive write access until you logout.|
+|!<$radio field="mode" value="read"></$radio> |!Read mode|You will be able to open all wiki content but cannot change any content. In case you decide to edit the wiki after you opened it in read-only mode, you need to reload the wiki and select write-mode.|
+
+<$reveal type="nomatch" text="read" default={{!!mode}} animate="yes">
+
+!! Please authenticate yourself to open the wiki in write-mode.
+
+Select your name from the list below or add it.
+
+''Name'': <$edit-text tiddler=<<output>> field="user" type="text" tag="input" default="" />
+
+<$set name="user" value={{!!user}}>
+<ul style="padding-left: 60px">
+<$list filter="[tag[User]] +[search:title<user>]" emptyMessage=<<new-user-form>>>
+  <li>
+    <$button class="tc-btn-invisible tmap-link">
+      <$view field="title" />
+      <$action-setfield $tiddler=<<output>> user={{!!title}} />
+    </$button>
+  </li>
+</$list>
+</ul>
+</$set>
+
+</$reveal>
